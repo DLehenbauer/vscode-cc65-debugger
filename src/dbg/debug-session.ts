@@ -136,7 +136,7 @@ export class CC65ViceDebugSession extends LoggingDebugSession {
                 cleanup(() => {
                     for(const pid of pids) {
                         try {
-                            process.kill(pid);
+                            pid != -1 && process.kill(pid);
                         }
                         catch {}
                     }
